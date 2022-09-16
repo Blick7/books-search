@@ -17,10 +17,11 @@ const BookItem = ({
   if (author && author.length > 2) {
     author = author[0];
   }
-  console.log(itemKey);
+  itemKey = itemKey.split('/').slice(-1).toString();
+  // console.log(itemKey.split('/').slice(-1).toString());
   return (
     <Link href={itemKey}>
-      <div className="max-w-xs w-full h-136 bg-[#dfb783] rounded-2xl p-4 flex flex-col cursor-pointer hover:border-slate-700 hover:border-4 hover:scale-90 duration-75">
+      <div className="group max-w-xs w-full h-136 bg-[#dfb783] rounded-2xl p-4 flex flex-col cursor-pointer hover:border-slate-700 hover:border-4 hover:scale-90 duration-75">
         <div className="w-64 h-80 relative flex justify-center items-center mx-auto">
           <Image
             src={cover}
@@ -31,7 +32,9 @@ const BookItem = ({
           />
         </div>
         <div className="flex flex-col justify-between grow mt-4">
-          <h3 className="text-center text-2xl">{title}</h3>
+          <h3 className="text-center text-2xl group-hover:underline">
+            {title}
+          </h3>
           <div>
             <div>
               <span className="font-bold">Author: </span>
