@@ -1,10 +1,9 @@
-// @ts-nocheck
-
-import React from 'react';
+import React, { useState } from 'react';
 import Image from 'next/image';
 
 import bookshelfImg from '../public/static/assets/knigi_biblioteka_polki_138556_1280x720.jpg';
 import BooksSearch from './BooksSearch';
+import BookItems from './BookItems';
 
 const Layout = () => {
   return (
@@ -19,6 +18,7 @@ const Layout = () => {
         />
       </div>
       <BooksSearch />
+      <BookItems />
     </>
   );
 };
