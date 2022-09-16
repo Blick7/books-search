@@ -2,8 +2,10 @@ import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import Background from '../components/Background';
 import Image from 'next/image';
-import coverNotFound from '../public/static/assets/no-book-cover-available.jpg';
+import Link from 'next/link';
 
+import coverNotFound from '../public/static/assets/no-book-cover-available.jpg';
+import { BiArrowBack } from 'react-icons/bi';
 const axios = require('axios').default;
 
 const enumerateString = (item, index, length) => {
@@ -41,8 +43,8 @@ const book = () => {
   return (
     <>
       <Background />
-      <section className="pt-40 px-8 h-160">
-        <div className="max-w-5xl w-full h-full p-10 rounded-xl mx-auto bg-[#dfb783] flex shadow-2xl">
+      <section className="pt-48 px-8 h-160">
+        <div className="max-w-5xl w-full h-full p-10 pt-20 rounded-xl mx-auto bg-[#dfb783] flex shadow-2xl relative">
           <div className="w-64 h-80 relative flex justify-center items-center  basis-3/12">
             <Image
               src={cover}
@@ -55,7 +57,9 @@ const book = () => {
           <div className="basis-9/12 overflow-y-auto p-2">
             <div>
               <span className="font-bold">Description:</span>{' '}
-              {book?.data.description.value.split('Source')[0]}
+              {book?.data.description?.value
+                ? book?.data.description.value.split('Source')[0]
+                : 'unknown'}
             </div>
             <div className="pt-2">
               <span className="font-bold">Subjects: </span>
@@ -90,6 +94,11 @@ const book = () => {
                 : 'unknown'}
             </div>
           </div>
+          <Link href="/">
+            <button className="absolute top-0 flex justify-center items-center text-2xl">
+              <BiArrowBack className="text-6xl" /> Go back
+            </button>
+          </Link>
         </div>
       </section>
     </>
