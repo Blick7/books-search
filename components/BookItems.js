@@ -29,11 +29,19 @@ const BookItems = () => {
   }, [search]);
 
   return (
-    <div className="flex flex-wrap justify-center items-center px-10 max-w-440 mx-auto mt-4 gap-4">
+    <div className="flex flex-wrap justify-center items-center px-10 max-w-440 mx-auto mt-8 mb-8 gap-4">
       {!isLoading &&
         searchData &&
         searchData.map((item) => (
-          <BookItem key={item.key} title={item.title} coverId={item.cover_i} />
+          <BookItem
+            key={item.key}
+            title={item.title}
+            coverId={item.cover_i}
+            author={item.author_name}
+            publishYear={item.first_publish_year}
+            totalEditions={item.edition_count}
+            itemKey={item.key}
+          />
         ))}
       {isLoading && <p className="text-red-700">IS LOADING>>>>>>></p>}
     </div>
