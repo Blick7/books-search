@@ -7,7 +7,8 @@ import { MongoClient } from 'mongodb';
 import BookItem from '../components/Books/BookItem';
 
 import { BiArrowBack } from 'react-icons/bi';
-const SavedBooks = (props) => {
+
+function SavedBooks(props) {
   const { books } = props;
   const router = useRouter();
   console.log(books);
@@ -45,7 +46,7 @@ const SavedBooks = (props) => {
       </section>
     </>
   );
-};
+}
 
 export default SavedBooks;
 
@@ -68,7 +69,7 @@ export async function getStaticProps() {
       books: books.map((book) => ({
         key: book._id.toString(),
         title: book.title,
-        author: book.author,
+        author: book.author || null,
         publishYear: book.publishYear,
         totalEditions: book.totalEditions,
         itemKey: book.itemKey,
