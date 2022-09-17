@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useEffect } from 'react';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { setItems } from '../store/searchSlice';
 
 import BookItem from './BookItem';
 
@@ -10,6 +11,8 @@ const BookItems = () => {
   const [searchData, setSearchData] = useState();
   const [isLoading, setIsLoading] = useState();
   const search = useSelector((state) => state.search.searchInput);
+  const searchItems = useSelector((state) => state.search.items);
+  const dispatch = useDispatch();
 
   useEffect(() => {
     const fetchData = async () => {
@@ -18,8 +21,8 @@ const BookItems = () => {
         const response = axios
           .get(`http://openlibrary.org/search.json?q=${search}`)
           .then((response) => {
-            console.log(response.data.docs);
             setSearchData(response.data.docs);
+            dispatch(setItems(response.data.docs));
             setIsLoading(false);
           })
           .catch((error) => console.log(error));
@@ -27,6 +30,10 @@ const BookItems = () => {
     };
     fetchData();
   }, [search]);
+
+  useEffect(() => {
+    setSearchData(searchItems);
+  }, [searchItems]);
 
   return (
     <div className="flex flex-wrap justify-center items-center px-10 max-w-440 mx-auto mt-8 mb-8 gap-4">

@@ -16,8 +16,8 @@ const book = () => {
   const [book, setBook] = useState();
   const router = useRouter();
   console.log(router);
-  const cover = book
-    ? `https://covers.openlibrary.org/b/id/${book.data.covers[0]}-L.jpg`
+  const cover = book?.data.covers
+    ? `https://covers.openlibrary.org/b/id/${book?.data.covers[0]}-L.jpg`
     : coverNotFound;
 
   useEffect(() => {
@@ -95,8 +95,8 @@ const book = () => {
             </div>
           </div>
           <Link href="/">
-            <button className="absolute top-0 flex justify-center items-center text-2xl">
-              <BiArrowBack className="text-6xl" /> Go back
+            <button className="absolute top-2 flex justify-center items-center text-2xl">
+              <BiArrowBack className="text-6xl pr-2" /> Go back
             </button>
           </Link>
         </div>
