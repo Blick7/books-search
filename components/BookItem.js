@@ -21,7 +21,7 @@ const BookItem = ({
   // console.log(itemKey.split('/').slice(-1).toString());
   return (
     <Link href={itemKey}>
-      <div className="group max-w-xs w-full h-136 bg-[#dfb783] rounded-2xl p-4 flex flex-col cursor-pointer hover:border-slate-700 hover:border-4 hover:scale-90 duration-75">
+      <li className="group max-w-xs w-full h-136 bg-[#dfb783] rounded-2xl p-4 flex flex-col cursor-pointer hover:border-slate-700 hover:border-4 hover:scale-90 duration-75">
         <div className="w-64 h-80 relative flex justify-center items-center mx-auto">
           <Image
             src={cover}
@@ -50,7 +50,7 @@ const BookItem = ({
             </div>
           </div>
         </div>
-      </div>
+      </li>
     </Link>
   );
 };
