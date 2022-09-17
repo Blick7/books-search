@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
-import Background from '../components/Background';
+import Background from '../components/UI/Background';
 import Image from 'next/image';
 import Link from 'next/link';
 import Head from 'next/head';

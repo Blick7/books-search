@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { setItems } from '../store/searchSlice';
+import { setItems } from '../../store/searchSlice';
 
 import BookItem from './BookItem';
-import LoadingSpinner from './LoadingSpinner';
+import LoadingSpinner from '../UI/LoadingSpinner';
 
 const axios = require('axios').default;
 
@@ -41,6 +41,8 @@ const BookItems = () => {
   const loadMoreHandler = () => {
     setLoadMore((prevValue) => prevValue + 16);
   };
+
+  console.log(searchData);
   return (
     <section className="flex flex-col justify-center items-center">
       <ul className="flex flex-wrap justify-center items-center px-10 max-w-440 mx-auto mt-8 mb-8 gap-8">

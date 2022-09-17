@@ -1,7 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 
-import bookImg from '../public/static/assets/open-book-clipart-06-1-300x300.png';
+import bookImg from '../../public/static/assets/open-book-clipart-06-1-300x300.png';
 
 const LoadingSpinner = () => {
   return (

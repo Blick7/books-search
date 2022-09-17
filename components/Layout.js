@@ -1,8 +1,8 @@
 import React from 'react';
 
 import BooksSearch from './BooksSearch';
-import BookItems from './BookItems';
-import Background from './Background';
+import BookItems from './Books/BookItems';
+import Background from './UI/Background';
 
 const Layout = () => {
   return (

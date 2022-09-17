@@ -1,7 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 
-import bookshelfImg from '../public/static/assets/knigi_biblioteka_polki_138556_1280x720.jpg';
+import bookshelfImg from '../../public/static/assets/knigi_biblioteka_polki_138556_1280x720.jpg';
 
 const Background = () => {
   return (

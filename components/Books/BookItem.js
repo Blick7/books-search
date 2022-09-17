@@ -1,7 +1,8 @@
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import coverNotFound from '../public/static/assets/no-book-cover-available.jpg';
+import coverNotFound from '../../public/static/assets/no-book-cover-available.jpg';
+import { AiFillStar } from 'react-icons/ai';
 
 const BookItem = ({
   title,
@@ -21,7 +22,7 @@ const BookItem = ({
   // console.log(itemKey.split('/').slice(-1).toString());
   return (
     <Link href={itemKey}>
-      <li className="group max-w-xs w-full h-136 bg-[#dfb783] rounded-2xl p-4 flex flex-col cursor-pointer hover:border-slate-700 hover:border-4 hover:scale-90 duration-75">
+      <li className="group max-w-xs w-full h-136 bg-[#dfb783] rounded-2xl p-4 flex flex-col cursor-pointer hover:border-slate-700 hover:border-4 hover:scale-90 duration-75 relative">
         <div className="w-64 h-80 relative flex justify-center items-center mx-auto">
           <Image
             src={cover}
@@ -49,6 +50,11 @@ const BookItem = ({
               {totalEditions || 'unknown'}
             </div>
           </div>
+        </div>
+        <div>
+          <button className="text-yellow-400 text-5xl absolute top-2 right-2 hover:text-yellow-600 duration-500 ">
+            <AiFillStar />
+          </button>
         </div>
       </li>
     </Link>
