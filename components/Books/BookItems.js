@@ -21,7 +21,7 @@ const BookItems = () => {
       if (search) {
         setIsLoading(true);
         const response = axios
-          .get(`http://openlibrary.org/search.json?q=${search}`)
+          .get(`https://openlibrary.org/search.json?q=${search}`)
           .then((response) => {
             console.log(search);
             setSearchData(response.data.docs.slice(0, loadMore));
