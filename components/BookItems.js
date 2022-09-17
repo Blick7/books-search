@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { setItems } from '../store/searchSlice';
 
 import BookItem from './BookItem';
+import LoadingSpinner from './LoadingSpinner';
 
 const axios = require('axios').default;
 
@@ -50,7 +51,7 @@ const BookItems = () => {
             itemKey={item.key}
           />
         ))}
-      {isLoading && <p className="text-red-700">IS LOADING>>>>>>></p>}
+      {isLoading && <LoadingSpinner />}
     </div>
   );
 };

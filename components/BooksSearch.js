@@ -2,6 +2,7 @@ import React, { useRef, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { setSearch } from '../store/searchSlice';
 import { ImSearch } from 'react-icons/im';
+import LoadingSpinner from './LoadingSpinner';
 
 const BooksSearch = (props) => {
   const inputRef = useRef();
