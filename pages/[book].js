@@ -62,7 +62,7 @@ const book = () => {
           </div>
           <div className="basis-9/12 overflow-y-auto p-2">
             <div>
-              <span className="font-bold">Description:</span>
+              <span className="font-bold">Description: </span>
               {typeof book?.data.description !== 'object'
                 ? book?.data.description
                 : 'unknown' || typeof book?.data.description === 'object'
@@ -102,11 +102,12 @@ const book = () => {
                 : 'unknown'}
             </div>
           </div>
-          <Link href="/">
-            <button className="absolute top-2 flex justify-center items-center text-2xl">
-              <BiArrowBack className="text-6xl pr-2" /> Go back
-            </button>
-          </Link>
+          <button
+            className="absolute top-2 flex justify-center items-center text-2xl"
+            onClick={() => router.back()}
+          >
+            <BiArrowBack className="text-6xl pr-2 animate-bounce" /> Go back
+          </button>
         </div>
       </section>
     </>

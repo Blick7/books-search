@@ -45,7 +45,7 @@ const BookItems = () => {
   console.log(searchData);
   return (
     <section className="flex flex-col justify-center items-center">
-      <ul className="flex flex-wrap justify-center items-center px-10 max-w-440 mx-auto mt-8 mb-8 gap-8">
+      <ul className="flex flex-wrap justify-center items-center sm:px-10 px-2 max-w-440 mx-auto mt-8 mb-8 gap-8">
         {!isLoading &&
           searchData &&
           searchData.map((item) => (

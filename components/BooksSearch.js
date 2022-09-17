@@ -1,5 +1,6 @@
 import React, { useRef, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import Link from 'next/link';
 import { setSearch } from '../store/searchSlice';
 import { ImSearch } from 'react-icons/im';
 import LoadingSpinner from './UI/LoadingSpinner';
@@ -24,7 +25,7 @@ const BooksSearch = (props) => {
   }, []);
 
   return (
-    <header className="pt-[5%] text-slate-400  text-center max-w-240 mx-auto px-4">
+    <header className="pt-[5%] text-slate-400  text-center max-w-240 mx-auto px-4 flex flex-col">
       <h1 className="text-7xl font-medium">Books Search</h1>
       <form
         className="flex mt-4 bg-white shadow-xl rounded-3xl"
@@ -40,7 +41,11 @@ const BooksSearch = (props) => {
           <ImSearch className="text-3xl text-black " />
         </button>
       </form>
-      <button>Saved Books</button>
+      <Link href="/saved-books">
+        <button className="text-black bg-slate-400 rounded-xl my-2 p-4 text-xl hover:bg-slate-500 duration-500 max-w-40">
+          Saved Books
+        </button>
+      </Link>
     </header>
   );
 };
