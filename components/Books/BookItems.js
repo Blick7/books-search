@@ -5,6 +5,7 @@ import { setItems } from '../../store/searchSlice';
 
 import BookItem from './BookItem';
 import LoadingSpinner from '../UI/LoadingSpinner';
+import BooksNotFound from '../UI/BooksNotFound';
 
 const axios = require('axios').default;
 
@@ -59,6 +60,7 @@ const BookItems = () => {
               itemKey={item.key}
             />
           ))}
+        {!isLoading && searchData.length === 0 && <BooksNotFound />}
         {isLoading && <LoadingSpinner />}
       </ul>
       {!isLoading && searchData && searchData.length > 0 && (
