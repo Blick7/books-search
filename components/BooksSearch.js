@@ -21,7 +21,7 @@ const BooksSearch = (props) => {
 
   useEffect(() => {
     inputRef.current.value = search; // actually, its not safe, but here I think is fine
-  }, [search]);
+  }, []);
 
   return (
     <header className="pt-[5%] text-slate-400  text-center max-w-240 mx-auto px-4">

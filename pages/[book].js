@@ -3,6 +3,7 @@ import { useRouter } from 'next/router';
 import Background from '../components/Background';
 import Image from 'next/image';
 import Link from 'next/link';
+import Head from 'next/head';
 
 import coverNotFound from '../public/static/assets/no-book-cover-available.jpg';
 import { BiArrowBack } from 'react-icons/bi';
@@ -42,6 +43,11 @@ const book = () => {
 
   return (
     <>
+      <Head>
+        <title>Books Search</title>
+        <meta name="description" content="Search books" />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
       <Background />
       <section className="pt-48 px-8 h-160">
         <div className="max-w-5xl w-full h-full p-10 pt-20 rounded-xl mx-auto bg-[#dfb783] flex shadow-2xl relative">
@@ -56,8 +62,10 @@ const book = () => {
           </div>
           <div className="basis-9/12 overflow-y-auto p-2">
             <div>
-              <span className="font-bold">Description:</span>{' '}
-              {book?.data.description?.value
+              <span className="font-bold">Description:</span>
+              {typeof book?.data.description !== 'object'
+                ? book?.data.description
+                : 'unknown' || typeof book?.data.description === 'object'
                 ? book?.data.description.value.split('Source')[0]
                 : 'unknown'}
             </div>

@@ -22,6 +22,7 @@ const BookItems = () => {
         const response = axios
           .get(`http://openlibrary.org/search.json?q=${search}`)
           .then((response) => {
+            console.log(search);
             setSearchData(response.data.docs);
             dispatch(setItems(response.data.docs));
             setIsLoading(false);
@@ -37,7 +38,7 @@ const BookItems = () => {
   }, [searchItems]);
 
   return (
-    <div className="flex flex-wrap justify-center items-center px-10 max-w-440 mx-auto mt-8 mb-8 gap-4">
+    <div className="flex flex-wrap justify-center items-center px-10 max-w-440 mx-auto mt-8 mb-8 gap-8">
       {!isLoading &&
         searchData &&
         searchData.map((item) => (
