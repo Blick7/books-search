@@ -75,5 +75,6 @@ export async function getStaticProps() {
         coverId: book.coverId,
       })),
     },
+    revalidate: 1,
   };
 }
