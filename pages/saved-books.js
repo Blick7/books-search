@@ -51,8 +51,6 @@ function SavedBooks(props) {
 export default SavedBooks;
 
 export async function getStaticProps() {
-  MongoClient.connect();
-
   const client = await MongoClient.connect(
     'mongodb+srv://blick:blick@cluster0.jiqr9ll.mongodb.net/books?retryWrites=true&w=majority'
   );
