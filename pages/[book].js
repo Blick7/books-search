@@ -13,7 +13,7 @@ const enumerateString = (item, index, length) => {
   return index !== length - 1 ? `${item}, ` : `${item}.`;
 };
 
-const book = () => {
+const Book = () => {
   const [book, setBook] = useState();
   const router = useRouter();
   console.log(router);
@@ -114,4 +114,4 @@ const book = () => {
   );
 };
 
-export default book;
+export default Book;
