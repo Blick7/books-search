@@ -32,7 +32,7 @@ const BookItem = ({
           />
         </div>
         <div className="flex flex-col justify-between grow mt-4">
-          <h3 className="text-center text-2xl group-hover:underline">
+          <h3 className="text-center text-2xl group-hover:underline max-h-24 h-full overflow-hidden">
             {title}
           </h3>
           <div>
