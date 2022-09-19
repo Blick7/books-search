@@ -43,7 +43,6 @@ const BookItems = () => {
     setLoadMore((prevValue) => prevValue + 16);
   };
 
-  console.log(searchData);
   return (
     <section className="flex flex-col justify-center items-center">
       <ul className="flex flex-wrap justify-center items-center sm:px-10 px-2 max-w-440 mx-auto mt-8 mb-8 gap-8">
@@ -60,7 +59,10 @@ const BookItems = () => {
               itemKey={item.key}
             />
           ))}
-        {!isLoading && searchData.length === 0 && <BooksNotFound />}
+        {!isLoading &&
+          searchData !== undefined &&
+          search.length > 0 &&
+          searchData.length === 0 && <BooksNotFound />}
         {isLoading && <LoadingSpinner />}
       </ul>
       {!isLoading && searchData && searchData.length > 0 && (

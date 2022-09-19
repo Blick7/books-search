@@ -16,7 +16,6 @@ const enumerateString = (item, index, length) => {
 const Book = () => {
   const [book, setBook] = useState();
   const router = useRouter();
-  console.log(router);
   const cover = book?.data.covers
     ? `https://covers.openlibrary.org/b/id/${book?.data.covers[0]}-L.jpg`
     : coverNotFound;
@@ -38,7 +37,6 @@ const Book = () => {
     };
     if (!router.isReady) return;
     fetchData();
-    console.log(book);
   }, [router.isReady]);
 
   return (

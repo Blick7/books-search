@@ -11,7 +11,7 @@ import { BiArrowBack } from 'react-icons/bi';
 function SavedBooks(props) {
   const { books } = props;
   const router = useRouter();
-  console.log(books);
+
   return (
     <>
       <Head>
