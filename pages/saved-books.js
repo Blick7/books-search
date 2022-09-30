@@ -23,7 +23,7 @@ function SavedBooks(props) {
         <h2 className="text-7xl font-medium">Your saved books:</h2>
         <button
           className="text-black font-bold mt-4 flex justify-center items-center text-2xl w-52 bg-slate-400 rounded-2xl"
-          onClick={() => router.back()}
+          onClick={() => router.push('/')}
         >
           <BiArrowBack className="text-6xl pr-2" /> Go back
         </button>
