@@ -35,9 +35,9 @@ function SavedBooks(props) {
               key={item.key}
               title={item.title}
               coverId={item.coverId}
-              author={item.author_name}
-              publishYear={item.first_publish_year}
-              totalEditions={item.edition_count}
+              author={item.author}
+              publishYear={item.publishYear}
+              totalEditions={item.totalEditions}
               itemKey={item.itemKey}
               savedBook={true}
             />
@@ -59,6 +59,8 @@ export async function getStaticProps() {
   const booksCollection = db.collection('books');
 
   const books = await booksCollection.find().toArray();
+
+  console.log(books);
 
   client.close();
 

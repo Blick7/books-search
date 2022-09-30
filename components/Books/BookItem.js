@@ -20,9 +20,7 @@ const BookItem = ({
   if (author && author.length > 2) {
     author = author[0];
   }
-  // if (Array.isArray(itemKey)) {
   itemKey = itemKey.split('/').slice(-1).toString();
-  // }
   const addSavedBook = async () => {
     const response = await axios.post('/api/add-saved-book', {
       title,
