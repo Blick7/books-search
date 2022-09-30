@@ -42,7 +42,6 @@ const Book = () => {
   let description;
   if (typeof book?.data.description === 'string') {
     description = book?.data.description;
-    console.log('jey');
   } else if (typeof book?.data.description === 'object') {
     description = book?.data.description.value.split('Source')[0];
   } else {

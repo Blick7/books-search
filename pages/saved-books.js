@@ -60,8 +60,6 @@ export async function getStaticProps() {
 
   const books = await booksCollection.find().toArray();
 
-  console.log(books);
-
   client.close();
 
   return {
