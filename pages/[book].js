@@ -39,6 +39,16 @@ const Book = () => {
     fetchData();
   }, [router.isReady]);
 
+  let description;
+  if (typeof book?.data.description === 'string') {
+    description = book?.data.description;
+    console.log('jey');
+  } else if (typeof book?.data.description === 'object') {
+    description = book?.data.description.value.split('Source')[0];
+  } else {
+    description = 'unknown';
+  }
+
   return (
     <>
       <Head>
@@ -60,12 +70,12 @@ const Book = () => {
           </div>
           <div className="basis-9/12 overflow-y-auto p-2">
             <div>
+              <span className="font-bold">Title: </span>
+              {book?.data.title}
+            </div>
+            <div className="pt-2">
               <span className="font-bold">Description: </span>
-              {typeof book?.data.description !== 'object'
-                ? book?.data.description
-                : 'unknown' || typeof book?.data.description === 'object'
-                ? book?.data.description.value.split('Source')[0]
-                : 'unknown'}
+              {description}
             </div>
             <div className="pt-2">
               <span className="font-bold">Subjects: </span>
